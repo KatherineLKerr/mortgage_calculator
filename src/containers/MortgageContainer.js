@@ -7,8 +7,8 @@ class MortgageContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mortgage1: 0,
-      mortgage2: 0
+      salary1: 0,
+      salary2: 0
     }
   }
 
@@ -16,7 +16,7 @@ class MortgageContainer extends Component {
     return(
       <div>
         <p>mortgage container </p>
-        <AllowedMortgage mortgage1={this.state.mortgage1} mortgage2={this.state.mortgage2}/>
+        <AllowedMortgage salary1={this.state.salary1} salary2={this.state.salary2}/>
         <p>mortgage form</p>
         <MortgageForm />
       </div>
