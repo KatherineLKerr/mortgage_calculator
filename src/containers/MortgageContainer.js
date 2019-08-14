@@ -10,7 +10,13 @@ class MortgageContainer extends Component {
       salary1: 0,
       salary2: 0
     }
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
+
+  handleFormSubmit({salary1, salary2}) {
+    this.setState({ salary1: salary1, salary2: salary2});
+  }
+
 
   render() {
     return(
@@ -18,7 +24,7 @@ class MortgageContainer extends Component {
         <p>mortgage container </p>
         <AllowedMortgage salary1={this.state.salary1} salary2={this.state.salary2}/>
         <p>mortgage form</p>
-        <MortgageForm />
+        <MortgageForm onFormSubmit={this.handleFormSubmit}/>
       </div>
     )
   }

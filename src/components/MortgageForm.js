@@ -9,6 +9,7 @@ class MortgageForm extends Component {
     }
     this.handleSalary1Change = this.handleSalary1Change.bind(this);
     this.handleSalary2Change = this.handleSalary2Change.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSalary1Change(event) {
@@ -19,10 +20,15 @@ class MortgageForm extends Component {
     this.setState({salary2: event.target.value});
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+    this.props.onFormSubmit({ salary1: this.state.salary1, salary2: this.state.salary2});
+  }
+
 
   render() {
     return (
-      <form className="mortgage-form">
+      <form className="mortgage-form" onSubmit={this.handleSubmit}>
         <label for="salary1">Salary 1:</label>
         <input id="salary1" type="number" value={this.state.salary1} onChange={this.handleSalary1Change}></input>
         <label for="salary2">Salary 2:</label>
