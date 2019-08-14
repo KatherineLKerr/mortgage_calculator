@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import AllowedMortgage from '../components/AllowedMortgage';
+import MortgageDisplay from '../components/MortgageDisplay';
 import MortgageForm from '../components/MortgageForm';
 
 class MortgageContainer extends Component {
@@ -12,25 +12,43 @@ class MortgageContainer extends Component {
       deposit: 0,
       monthlyCommitments: 0,
       interestRate: 0,
-      mortgageTerm: 0
+      mortgageTerm: 0,
+      mortgage: 0,
+      monthlyRepayments: 0
     }
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.calculateMortgage = this.calculateMortgage.bind(this);
+  }
+
+  calculateMortgage() {
+    const mortgage = ((parseInt(this.state.salary1) + parseInt(this.state.salary2)) * 3) -
+    parseInt(this.state.monthlyCommitments) + parseInt(this.state.deposit)
+
+    const totalRepayment = mortgage + (mortgage / parseInt(this.state.interestRate));
+    const monthlyRepayments = totalRepayment / (parseInt(this.state.mortgageTerm) * 12)
+    console.log("mortgage", mortgage);
+    console.log(totalRepayment);
+    console.log("repay", monthlyRepayments);
+
+    this.setState({mortgage: mortgage});
+    this.setState({monthlyRepayments: monthlyRepayments});
   }
 
   handleFormSubmit({salary1, salary2, deposit, monthlyCommitments, interestRate, mortgageTerm}) {
     this.setState({ salary1: salary1, salary2: salary2,
                   deposit: deposit, monthlyCommitments: monthlyCommitments,
                   interestRate: interestRate, mortgageTerm: mortgageTerm});
+    this.calculateMortgage();
   }
+
+
 
   render() {
     return(
       <div>
         <p>Enter Details Here:</p>
         <MortgageForm onFormSubmit={this.handleFormSubmit}/>
-        <AllowedMortgage salary1={this.state.salary1} salary2={this.state.salary2}
-        deposit={this.state.deposit} monthlyCommitments={this.state.monthlyCommitments}
-        interestRate={this.state.interestRate} mortgageTerm={this.state.mortgageTerm}/>
+        <MortgageDisplay mortgage={this.state.mortgage} monthlyRepayments={this.state.monthlyRepayments} />
       </div>
     )
   }
