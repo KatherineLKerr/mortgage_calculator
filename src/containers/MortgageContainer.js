@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import AllowedMortgage from '../components/AllowedMortgage'
 
 class MortgageContainer extends Component {
 
@@ -14,6 +15,7 @@ class MortgageContainer extends Component {
     return(
       <div>
         <p>mortgage container </p>
+        <AllowedMortgage />
       </div>
     )
   }
