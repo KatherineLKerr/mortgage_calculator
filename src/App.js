@@ -4,7 +4,7 @@ import MortgageContainer from './containers/MortgageContainer'
 
 function App() {
   return (
-    <div>
+    <div className="app">
      <h1>Mortgage Calculator</h1>
      <MortgageContainer/>
     </div>

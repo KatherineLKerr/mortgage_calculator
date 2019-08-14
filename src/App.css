@@ -1,33 +1,45 @@
-.App {
-  text-align: center;
+.app {
+  font-family: serif;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mortgage-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 200px;
+  border: 2px lightblue solid;
+  margin: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.form-entry {
+  display: flex;
+  flex-direction: column;
+  padding: 10px
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.components {
+  display: flex;
+  flex-direction: row;
+}
+
+.mortgage-display {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+}
+
+h1, .button {
+  color: lightblue;
+  background-color: darkblue;
+}
+
+h1 {
+  width: 400px;
+  padding-left: 10px;
+}
+
+.button:hover {
+  color: darkblue;
+  background-color: lightblue;
+
 }

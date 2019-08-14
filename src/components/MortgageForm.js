@@ -54,22 +54,38 @@ class MortgageForm extends Component {
 
   render() {
     return (
-      <form className="mortgage-form" onSubmit={this.handleSubmit}>
-        <label for="salary1">Salary 1:</label>
-        <input id="salary1" type="number" value={this.state.salary1} onChange={this.handleSalary1Change}></input>
-        <label for="salary2">Salary 2:</label>
-        <input id="salary2" type="number" value={this.state.salary2} onChange={this.handleSalary2Change}></input>
-        <label for="deposit">Deposit Amount:</label>
-        <input id="deposit" type="number" value={this.state.deposit} onChange={this.handleDepositChange}></input>
-        <label for="monthly-commitments">Monthly Commitments:</label>
-        <input id="monthly-commitments" type="number" value={this.state.monthlyCommitments} onChange={this.handleMonthlyCommitmentChange}></input>
-        <label for="interest-rate">Interest Rate:</label>
-        <input id="interest-rate" type="number" value={this.state.interestRate} onChange={this.handleInterestRateChange}></input>
-        <label for="mortgage-term">Mortgage Term:</label>
-        <input id="mortgage-term" type="number" value={this.state.mortgageTerm} onChange={this.handleMortgageTermChange}></input>
-
-        <input type="submit" value="Calculate Mortgage"></input>
-      </form>
+      <div className="mortgage-form" >
+        <h3>Enter Details Here:</h3>
+        <form onSubmit={this.handleSubmit}>
+          <div className="form-entry">
+          <label for="salary1">Salary 1:</label>
+          <input id="salary1" type="number" value={this.state.salary1} onChange={this.handleSalary1Change}></input>
+          </div>
+          <div className="form-entry">
+          <label for="salary2">Salary 2:</label>
+          <input id="salary2" type="number" value={this.state.salary2} onChange={this.handleSalary2Change}></input>
+          </div>
+          <div className="form-entry">
+          <label for="deposit">Deposit Amount:</label>
+          <input id="deposit" type="number" value={this.state.deposit} onChange={this.handleDepositChange}></input>
+          </div>
+          <div className="form-entry">
+          <label for="monthly-commitments">Monthly Commitments:</label>
+          <input id="monthly-commitments" type="number" value={this.state.monthlyCommitments} onChange={this.handleMonthlyCommitmentChange}></input>
+          </div>
+          <div className="form-entry">
+          <label for="interest-rate">Interest Rate:</label>
+          <input id="interest-rate" type="number" value={this.state.interestRate} onChange={this.handleInterestRateChange}></input>
+          </div>
+          <div className="form-entry">
+          <label for="mortgage-term">Mortgage Term:</label>
+          <input id="mortgage-term" type="number" value={this.state.mortgageTerm} onChange={this.handleMortgageTermChange}></input>
+          </div>
+          <div className="form-entry">
+          <input type="submit" className="button" value="Calculate Mortgage"></input>
+          </div>
+        </form>
+      </div>
     )
   }
 }

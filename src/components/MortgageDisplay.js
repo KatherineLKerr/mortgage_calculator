@@ -1,10 +1,10 @@
 import React from 'react';
 
 const MortgageDisplay = (props) =>
-  <div>
-    <h2>Your Mortgage:</h2>
+  <div className='mortgage-display'>
+    <h3>Your Mortgage:</h3>
     <p>{props.mortgage}</p>
-    <h2>Repayments:</h2>
+    <h3>Repayments:</h3>
     <p>{props.monthlyRepayments}</p>
   </div>
 

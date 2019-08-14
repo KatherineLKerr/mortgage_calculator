@@ -45,8 +45,7 @@ class MortgageContainer extends Component {
 
   render() {
     return(
-      <div>
-        <p>Enter Details Here:</p>
+      <div className="components">
         <MortgageForm onFormSubmit={this.handleFormSubmit}/>
         <MortgageDisplay mortgage={this.state.mortgage} monthlyRepayments={this.state.monthlyRepayments} />
       </div>
