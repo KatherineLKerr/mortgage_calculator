@@ -5,10 +5,14 @@ class MortgageForm extends Component {
     super(props);
     this.state = {
       salary1: 0,
-      salary2: 0
+      salary2: 0,
+      deposit: 0,
+      monthlyCommitments: 0
     }
     this.handleSalary1Change = this.handleSalary1Change.bind(this);
     this.handleSalary2Change = this.handleSalary2Change.bind(this);
+    this.handleDepositChange = this.handleDepositChange.bind(this);
+    this.handleMonthlyCommitmentChange = this.handleMonthlyCommitmentChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -18,6 +22,14 @@ class MortgageForm extends Component {
 
   handleSalary2Change(event) {
     this.setState({salary2: event.target.value});
+  }
+
+  handleDepositChange(event) {
+    this.setState({deposit: event.target.value})
+  }
+
+  handleMonthlyCommitmentChange(event) {
+    this.setState({monthlyCommitments: event.target.value})
   }
 
   handleSubmit(event) {
@@ -32,6 +44,11 @@ class MortgageForm extends Component {
         <input id="salary1" type="number" value={this.state.salary1} onChange={this.handleSalary1Change}></input>
         <label for="salary2">Salary 2:</label>
         <input id="salary2" type="number" value={this.state.salary2} onChange={this.handleSalary2Change}></input>
+        <label for="deposit">Deposit Amount:</label>
+        <input id="deposit" type="number" value={this.state.deposit} onChange={this.handleDepositChange}></input>
+        <label for="monthly-commitments">Monthly Commitments:</label>
+        <input id="monthly-commitments" type="number" value={this.state.monthlyCommitments} onChange={this.handleMonthlyCommitmentChange}></input>
+
         <input type="submit" value="Calculate Mortgage"></input>
       </form>
     )
