@@ -25,7 +25,6 @@ class MortgageForm extends Component {
     this.props.onFormSubmit({ salary1: this.state.salary1, salary2: this.state.salary2});
   }
 
-
   render() {
     return (
       <form className="mortgage-form" onSubmit={this.handleSubmit}>
