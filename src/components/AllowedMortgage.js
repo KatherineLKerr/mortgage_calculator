@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
+import MortgageDisplay from './MortgageDisplay'
+class AllowedMortgage extends Component {
 
-const AllowedMortgage = ( props ) => {
+  constructor(props) {
+    super(props);
+    this.state = {
+      monthlyRepayments: 0
+    }
+  }
 
-  return (
-    <div>Mortgage allowed component
-     <h2>{props.deposit}</h2>
-     <h2>{props.monthlyCommitments}</h2>
-     <p>{((parseInt(props.salary1) + parseInt(props.salary2)) * 3) -
-                parseInt(props.monthlyCommitments) + parseInt(props.deposit)}</p>
-    </div>
-  )
+  render() {
+    return(
+      <div>
+        
+        <MortgageDisplay/>
+      </div>
+    )
+  }
 }
 export default AllowedMortgage;
