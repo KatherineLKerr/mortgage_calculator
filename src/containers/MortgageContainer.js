@@ -15,7 +15,7 @@ class MortgageContainer extends Component {
     return(
       <div>
         <p>mortgage container </p>
-        <AllowedMortgage />
+        <AllowedMortgage mortgage1={this.state.mortgage1} mortgage2={this.state.mortgage2}/>
       </div>
     )
   }
