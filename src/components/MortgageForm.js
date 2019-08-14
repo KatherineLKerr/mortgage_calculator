@@ -34,7 +34,8 @@ class MortgageForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.onFormSubmit({ salary1: this.state.salary1, salary2: this.state.salary2});
+    this.props.onFormSubmit({ salary1: this.state.salary1, salary2: this.state.salary2,
+                            deposit: this.state.deposit, monthlyCommitments: this.state.monthlyCommitments});
   }
 
   render() {
