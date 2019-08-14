@@ -26,18 +26,20 @@ class MortgageContainer extends Component {
 
     const totalRepayment = mortgage + (mortgage / parseInt(this.state.interestRate));
     const monthlyRepayments = totalRepayment / (parseInt(this.state.mortgageTerm) * 12)
-    console.log("mortgage", mortgage);
-    console.log(totalRepayment);
-    console.log("repay", monthlyRepayments);
 
-    this.setState({mortgage: mortgage});
-    this.setState({monthlyRepayments: monthlyRepayments});
+    if (monthlyRepayments !== this.state.monthlyRepayments) {
+      this.setState({mortgage: mortgage});
+      this.setState({monthlyRepayments: monthlyRepayments});
+    }
   }
 
   handleFormSubmit({salary1, salary2, deposit, monthlyCommitments, interestRate, mortgageTerm}) {
     this.setState({ salary1: salary1, salary2: salary2,
                   deposit: deposit, monthlyCommitments: monthlyCommitments,
                   interestRate: interestRate, mortgageTerm: mortgageTerm});
+  }
+
+  componentDidUpdate() {
     this.calculateMortgage();
   }
 
